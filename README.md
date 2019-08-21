@@ -4,7 +4,7 @@ The code employs a minimal hash function (which uniquely characterizes any tripl
 combinations of letters drawn from A,G,C,T,N. The hash function is
 
 <p align="center">
-f(s)= (s(1) + s(2)*5 + s(3)*25%)125+1
+f(s)= (s(1) + s(2)*5 + s(3)*25)%125+1
 </p>
 
 If any codon has the letter N in it (for unidentified) it returns the result as #. 
