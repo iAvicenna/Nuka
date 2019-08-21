@@ -22,17 +22,17 @@ nuka(nuc_seqs,options)
 where nuc_seqs is either a cell of nucleotide sequences or a character matrix. Optional
 arguements are
 
-*frames:* As a vector array of integers 0,1,2 with the same length as the number of sequences
+**frames:** As a vector array of integers 0,1,2 with the same length as the number of sequences
 (Default is a 0 vector meaning it starts converting from the start of the sequence).
 
-*num_threads:* number of threads (default 1) that should be used (parallel pool is started 
+**num_threads:** number of threads (default 1) that should be used (parallel pool is started 
 automatically if bigger than 1). 
 
-*replace_non_agct:* If true it replaces any non A,G,C,T,N,U character by N and replaces U by T. 
+**replace_non_agct:** If true it replaces any non A,G,C,T,N,U character by N and replaces U by T. 
 Defauly value is true. If you are %100 percent sure that your sequences do not contain any such 
 characters then setting this to false results in slight speed up. However if this options is false
 and there are such characters than the code might turn in unpredictable results (due to hash collisions)
-so *NOT* reccomended. 
+so **NOT** reccomended. 
 
 You can set the options as a struct such as
 
