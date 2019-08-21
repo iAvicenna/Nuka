@@ -57,7 +57,7 @@ Converting 1600000 sequences of mean length 300.
 Using nuka...It took 11 seconds.
 </p>  
 <p align="center">
-Using nt2aa... 393 seconds.
+Using nt2aa... It took 393 seconds.
 </p>  
 
 
