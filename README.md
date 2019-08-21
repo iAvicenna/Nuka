@@ -67,7 +67,7 @@ Matlab(2018b), C. Speed testing function also requires nt2aa function from the b
 
 # Author
 Sina Tureli
-Nuka
+
 
 # Licensing
 
