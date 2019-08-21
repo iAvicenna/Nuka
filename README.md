@@ -46,6 +46,13 @@ or if you do not want to use options then simply go
 nuka(nuc_seqs)
 <p>
 
+# Technical Details
+
+If one uses a search tree the on average for each codon you have to do 6 comparisons (and worst case 12) to get the amino acid letter. Using a hash function reduces this to a single evaluation. The hash function given above maps words of length 3 drawn from A,G,C,T,N uniquely to a hash_index. The only slight drawback is that if there are any other anomolous letters or characters in sequence data then this might result in hash key collision and produce unreliable results. Therefore the code checks the sequence data for such letters and replace them either by N or if it is a U (for Uracil) then it replaces them by T. This resolves the hash collision issue. The speed up is considerable as provided by the following example (which compares nuka to nt2aa in bioinformatics toolbox):
+
+Converting 1600000 sequences of mean length 300.
+Using nuka...It took 11 seconds
+Using nt2aa... 393 seconds
 
 
 # Requirements
