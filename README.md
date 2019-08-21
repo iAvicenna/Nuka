@@ -38,6 +38,8 @@ You can set the options as a struct such as
 
 <p align="center">
 options1.num_threads=2;
+</p>  
+<p align="center">  
 nuka(nuc_seqs,options1)
 </p>
 
