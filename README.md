@@ -3,7 +3,9 @@ This is a fast nucleotide to aminoacid sequence conversion using MATLAB and C.
 The code employs a minimal hash function (which uniquely characterizes any triple 
 combinations of letters drawn from A,G,C,T,N. The hash function is
 
+<p align="center">
 f(s)= mod(s(1) + s(2)*5 + s(3)*25,125)+1
+</p>
 
 If any codon has the letter N in it (for unidentified) it returns the result as #. 
 Stop codons are shown as X. Prior to conversion, it checks the data for any other 
