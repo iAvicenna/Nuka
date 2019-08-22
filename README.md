@@ -1,7 +1,7 @@
 # Nuka
 This is an ultra-fast nucleotide to aminoacid sequence conversion using MATLAB and C.
 The code employs a minimal hash function (which uniquely characterizes any triple 
-combinations of letters drawn from A,G,C,T,N. The hash function is
+combinations of letters drawn from A,G,C,T,N). The hash function is
 
 <p align="center">
 f(s)= (s(1) + s(2)*5 + s(3)*25)%125+1
