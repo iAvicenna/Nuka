@@ -31,6 +31,8 @@ characters then setting this to false results in slight speed up. However if thi
 and there are such characters than the code might turn in unpredictable results (due to hash collisions)
 so **NOT** reccomended. 
 
+**phreds:**  If phred scores for the sequence are supplied then their average is computed on each codon and returned as a phred score for each aminoacid.
+
 You can set the options as a struct such as
 
 <p align="center">
