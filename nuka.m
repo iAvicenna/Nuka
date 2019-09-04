@@ -1,5 +1,5 @@
 
-function [amino_seqs,is_warning]=nuka(nuc_seqs,optional)
+function varargout=nuka(nuc_seqs,optional)
         
 
     if nargin<1
@@ -31,19 +31,22 @@ function [amino_seqs,is_warning]=nuka(nuc_seqs,optional)
         error('Optional argument must be a struct');
     end
     
-    frames=zeros(1,length(nuc_seqs));
-    replace_non_agct=true;
-
-    var_names={'frames','replace_non_agct'};
-    var_types={'double','logical'};
+    [s1,~]=size(nuc_seqs);
     
-    cell_types={''};
+    frames=zeros(1,length(s1));
+    replace_non_agct=true;
+    phreds=[];
 
-    if exist('optional','var')
+    var_names={'frames','replace_non_agct','phreds'};
+    var_types={'double','logical','cell'};
+    
+    cell_types={'double'};
 
-        [frames,replace_non_agct]=...
+    if exist('optional','var') && ~isempty(optional)
+
+        [frames,replace_non_agct,phreds]=...
             parseOptionalInputs(var_names,var_types,cell_types,optional,...
-                   frames,replace_non_agct);
+                   frames,replace_non_agct,phreds);
     end
     
     
@@ -74,8 +77,18 @@ function [amino_seqs,is_warning]=nuka(nuc_seqs,optional)
     amino_seqs=computeAAwithHash(nuc_seqs,int32(frames));
 
 
+    varargout{1}=amino_seqs;
+    
+    
+    if exist('phreds','var') && ~isempty(phreds)
 
 
+        aa_phred=averagePhred(phreds,frames);
+
+        varargout{2}=aa_phred;
+       
+    end
+    
     
     
 end
